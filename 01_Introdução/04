@@ -1,0 +1,23 @@
+- Informações estão na memória, não espalhadas.
+-- JSON
+
+- Pense em termos de COMPONENTE
+
+- Conceito de DRY (Don't Repeat Yourself)
+
+- Identifique ONDE os dados precisam estar
+
+- Array de videos
+-- Campo de busca
+-- Lista de videos
+--- Um video
+
+- fluxo de dados INVERSO
+
+- TEXTO DA BUSCA = oiac
+- Campo de busca oiac
+
+
+-> CAMPO -> digito NO campo <- elemento digitado
+
+-> CAMPO -> digito NA MEMORIA -> atualizado no campo
