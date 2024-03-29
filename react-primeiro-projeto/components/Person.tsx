@@ -1,11 +1,31 @@
-export const Person =()=>{
-    return(
+const getWeekDay = () => {
+    return new Intl.DateTimeFormat('pt-BR', { weekday: 'long' }).format(new Date());
+}
+
+export const Person = () => {
+    const data = {
+        name: 'Elon Musk',
+        avatar: 'https://files.sunoresearch.com.br/p/uploads/2018/09/Elon-Musk-2.jpg',
+        roles: ['CEO da Tesla', 'CEO da SpaceX' ]
+    }
+    const name: string = 'Elon Musk';
+    const avatar: string = 'https://files.sunoresearch.com.br/p/uploads/2018/09/Elon-Musk-2.jpg';
+
+    return (
         <>
-            <h1>Elon Musk</h1>
-            <img 
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Elon_Musk_Colorado_2022_%28cropped2%29.jpg/220px-Elon_Musk_Colorado_2022_%28cropped2%29.jpg" 
-            alt='Elon Musk'
+            <h1 style={{ color: 'red', fontSize: '30px' }}>
+                Name: {data.name} - {getWeekDay()}
+            </h1>
+            <img
+                src={data.avatar}
+                alt={data.name}
+                className='w-40'
             />
+            <ul>
+                <li>{data.roles[0]}</li>
+                <li>{data.roles[1]}</li>
+                <li>CEO da ...</li>
+            </ul>
         </>
-    )
+    );
 }
