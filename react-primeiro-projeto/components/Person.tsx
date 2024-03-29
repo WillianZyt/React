@@ -13,7 +13,7 @@ export const Person = ({name, avatar, roles}: Props) => {
             <img
                 src={avatar}
                 alt={name}
-                className='w-40'
+                className='w-15'
             />
             <ul>
                 <li>{roles[0]}</li>
