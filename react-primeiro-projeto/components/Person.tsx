@@ -9,11 +9,11 @@ export const Person = ({name, avatar, roles}: Props) => {
     // const { name, avatar, roles } = props;
     return (
         <div className='p-3'>
-            <h1>Name: {name}</h1>
+            <h1>Nome: {name}</h1>
             <img
                 src={avatar}
                 alt={name}
-                className='w-15'
+                className='w-40'
             />
             <ul>
                 <li>{roles[0]}</li>
