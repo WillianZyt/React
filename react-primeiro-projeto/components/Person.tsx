@@ -1,5 +1,5 @@
 type Props = {
-    name: string;;
+    name: string;
     avatar: string;
     roles: string[];
     address?: string; //se tiver o ? antes do :, torna opcional o adress
