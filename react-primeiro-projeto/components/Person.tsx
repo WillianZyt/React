@@ -1,31 +1,24 @@
-const getWeekDay = () => {
-    return new Intl.DateTimeFormat('pt-BR', { weekday: 'long' }).format(new Date());
+type Props = {
+    name: string;;
+    avatar: string;
+    roles: string[];
+    address?: string; //se tiver o ? antes do :, torna opcional o adress
 }
 
-export const Person = () => {
-    const data = {
-        name: 'Elon Musk',
-        avatar: 'https://files.sunoresearch.com.br/p/uploads/2018/09/Elon-Musk-2.jpg',
-        roles: ['CEO da Tesla', 'CEO da SpaceX' ]
-    }
-    const name: string = 'Elon Musk';
-    const avatar: string = 'https://files.sunoresearch.com.br/p/uploads/2018/09/Elon-Musk-2.jpg';
-
+export const Person = ({name, avatar, roles}: Props) => {
+    // const { name, avatar, roles } = props;
     return (
-        <>
-            <h1 style={{ color: 'red', fontSize: '30px' }}>
-                Name: {data.name} - {getWeekDay()}
-            </h1>
+        <div className='p-3'>
+            <h1>Name: {name}</h1>
             <img
-                src={data.avatar}
-                alt={data.name}
+                src={avatar}
+                alt={name}
                 className='w-40'
             />
             <ul>
-                <li>{data.roles[0]}</li>
-                <li>{data.roles[1]}</li>
-                <li>CEO da ...</li>
+                <li>{roles[0]}</li>
+                <li>{roles[1]}</li>
             </ul>
-        </>
+        </div>
     );
 }
