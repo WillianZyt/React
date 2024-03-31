@@ -1,6 +1,7 @@
 // import { GeoForm } from '../../components/GeoForm';
 
 import { Card } from "@/components/Card";
+import { Circle } from "@/components/Circle";
 import { Person } from "@/components/Person";
 
 
@@ -11,7 +12,7 @@ const Page = () => {
       <h1 className='font-bold text-2xl'>Olá mundo</h1>
       <h3>Algum outro texto</h3>
 
-      <Card>Frase de efeito!</Card>
+      <Card phrase="Alguma frase TOP" author=""/>
     </div>
   );
 }
