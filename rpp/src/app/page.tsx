@@ -1,5 +1,8 @@
 // import { GeoForm } from '../../components/GeoForm';
-import { Person } from '../../components/Person';
+
+import { Card } from "@/components/Card";
+import { Person } from "@/components/Person";
+
 
 
 const Page = () => {
@@ -8,16 +11,7 @@ const Page = () => {
       <h1 className='font-bold text-2xl'>Olá mundo</h1>
       <h3>Algum outro texto</h3>
 
-      <Person 
-      name='Elon Musk'
-      avatar='https://files.sunoresearch.com.br/p/uploads/2018/09/Elon-Musk-2.jpg'
-      roles={['CEO da Tesla', 'CEO da SpaceX']}
-      />
-      <Person 
-      name='Jeff Bezos'
-      avatar='https://neofeed.com.br/wp-content/uploads/2024/03/jeff-bezos.jpg'
-      roles={['CEO da Amazon', 'CEO da Blue Origin']}
-      />
+      <Card>Frase de efeito!</Card>
     </div>
   );
 }
