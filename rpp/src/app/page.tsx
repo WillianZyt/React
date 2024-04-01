@@ -1,12 +1,12 @@
 // import { GeoForm } from '../../components/GeoForm';
 
-import { Card } from "@/components/Card";
-import { Circle } from "@/components/Circle";
-import { Person } from "@/components/Person";
-
+import { peopleList } from "@/data/peopleList";
 
 
 const Page = () => {
+
+  const list = peopleList.map(person => <li>{person.name}</li>)
+
   return (
     <div>
       <h1 className='font-bold text-2xl'>Olá mundo</h1>
