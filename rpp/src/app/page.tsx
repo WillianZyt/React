@@ -5,7 +5,7 @@ import { peopleList } from "@/data/peopleList";
 
 const Page = () => {
 
-  const list = peopleList.map(person => <li>{person.name}</li>)
+const chemists = peopleList.filter(person => person.profession === 'chemist')
 
   return (
     <div>
@@ -13,6 +13,15 @@ const Page = () => {
       <h3>Algum outro texto</h3>
 
       
+      {chemists.length>0 && 
+      <>
+        <h3>Lista de químicos</h3>
+        <ul>
+          {chemists.map(person=>
+            <li key={person.id}>{person.name}</li>)}
+        </ul>
+      </>
+      }
     </div>
   );
 }
