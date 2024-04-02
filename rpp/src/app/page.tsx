@@ -13,7 +13,7 @@ const Page = () => {
 
       {chemists.length > 0 &&
         <>
-          <h3>Lista de químicos</h3>
+          <h3>Lista de químicoss</h3>
           <ul>
             {chemists.map(person =>
               <li key={person.id}>{person.name}</li>)}
