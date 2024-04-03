@@ -31,9 +31,7 @@ export const EmojiRating = ({ rate }: Props) => {
         }
     }
     
-    
     // const stars = '😀'.repeat(rateInt) + '😶'.repeat(5 - rateInt)
-
 
     return (
         <div className="flex items-center text-6xl">
