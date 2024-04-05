@@ -1,4 +1,3 @@
-import { students } from "@/data/students";
 import { Student } from "@/types/Student";
 
 type Props = {
@@ -21,7 +20,7 @@ export const StudentTable = ({ students }: Props) => {
         {students.map(item => (
           <tr key={item.id} className="text-gray-800 bg-gray-400 border-b border-gray-600">
             <td className="p-3 flex items-center">
-              <img src={item.avatar} alt={item.name} className="w-10 h-10 rounded-full mr-3"/>
+              <img src={item.avatar} alt={item.name} className="w-10 h-10 rounded-full mr-3" />
               <div>
                 <div className="font-bold">{item.name}</div>
                 <div>{item.email}</div>
@@ -33,7 +32,7 @@ export const StudentTable = ({ students }: Props) => {
             </td>
             <td className="p-3">{item.grade1.toFixed(1)}</td>
             <td className="p-3">{item.grade1.toFixed(1)}</td>
-            <td className="p-3 font-bold">{item.active ? ((item.grade1 + item.grade2)/2).toFixed(1) : '--'}</td>
+            <td className="p-3 font-bold">{item.active ? ((item.grade1 + item.grade2) / 2).toFixed(1) : '--'}</td>
           </tr>
         ))}
       </tbody>
