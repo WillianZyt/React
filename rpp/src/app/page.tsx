@@ -1,40 +1,44 @@
 'use client'
-import { Person } from "@/types/Person";
+
+import { TodoItem } from "@/types/TodoItem";
 import { useState } from "react";
 
 const Page = () => {
-  const [fullName, setFullName] = useState<Person>({
-    name: 'Willian', lastname: 'Zytkoski'
-  });
+  const [itemInput, setItemInput] = useState('')
+  const [list, setList] = useState<TodoItem[]>([
+    {label:'Fazer dever de casa', checked: false},
+    {label: 'Comprar o bolo', checked: false}
+  ]);
 
-  const handleClearButton =()=>{
-    setFullName({...fullName, name: ''})
-  }
+  const handleAddButton =() =>{
+    setList([...list, {label:itemInput, checked:false}]);
+    setItemInput('');
+  };
 
   return (
-    <div className="w-screen h-screen flex flex-col 
-    justify-center items-center text-3xl">
-      <input 
-      type="text" 
-      placeholder="Nome"
-      className="border border-black p-3 text-2xl 
-      text-black rounded-md mb-3"
-      value={fullName.name}
-      onChange={e=>setFullName({...fullName , name: e.target.value})}
-      />
-      <input type="text" 
-      placeholder="Sobrenome"
-      className="border border-black p-3 text-2xl 
-      text-black rounded-md mb-3"
-      value={fullName.lastname}
-      onChange={e=>setFullName({...fullName , lastname: e.target.value})}
-      />
-      <p>Meu nome completo é:</p>
-      <p>{fullName.name} {fullName.lastname}</p>
-      <button onClick={handleClearButton}>Limpar nome</button>
+    <div className="w-screen h-screen flex flex-col items-center text-2xl">
+      <h1 className="text-4xl mt-5">Lista de Tarefas</h1>
+
+      <div className="flex w-full max-w-lg my-3 p-4 rounded-md bg-gray-700 border-2 border-gray-500">
+        <input
+          type="text"
+          placeholder="O que deseja fazer?"
+          className="flex-1 border border-black p-3 text-2xl text-black rounded-md mr-3"
+          onChange={e=>setItemInput(e.target.value)}
+        />
+        <button onClick={handleAddButton}>Adicionar</button>
+      </div>
+
+      <p className="my-4">Itens na lista: {list.length} </p>
+
+      <ul className="w-full max-w-lg list-disc pl-5">
+        {list.map(item=> (
+          <li>{item.label} - <button className="hover:underline">[ deletar ]</button></li>
+        ))}
+      </ul>
+
     </div>
   );
 }
 
 export default Page;
-// onClick={()=> alert('funcionou')}
