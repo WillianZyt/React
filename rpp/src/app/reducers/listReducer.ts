@@ -26,7 +26,7 @@ type RemoveAction = {
   };
 }
 
-type listAction = AddAction | EditTextAction | ToggleDoneAction | RemoveItem;
+type listAction = AddAction | EditTextAction | ToggleDoneAction | RemoveAction;
 
 export const listReducer = (list: Item[], action: listAction) => {
   switch (action.type) {
@@ -39,17 +39,18 @@ export const listReducer = (list: Item[], action: listAction) => {
 
     case 'editText':
       return list.map(t => {
-        if (t.id === action.payload.id) t.text = action.payload.newText;
+        if (t.id === action.payload.id){
+            t.text = action.payload.newText;
+        }
         return t;
-      })
+      });
 
     case 'toggleDone':
       return list.map(t => {
-        if (t.id === action.payload.id) {
-          t.done = !t.done;
-        }
+        if (t.id === action.payload.id) t.done = !t.done;
         return t;
       })
+      
     case 'remove':
       return list.filter(t => t.id !== action.payload.id)
     default:
