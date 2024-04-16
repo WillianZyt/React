@@ -1,38 +1,17 @@
 'use client'
 
-import { subtle } from "crypto";
-import { title } from "process";
-
-const Subtitle =({label}: {label:string})=>{
-  return(
-    <p>{label}</p>
-  )
-}
-
-const Title =({label}: {label:string})=>{
-  return(
-    <h1 className="text-4xl font-bold my-4">{label}</h1>
-  )
-}
-
-const Header = ({ title, subtitle }: { title: string; subtitle: string }) => {
-  return (
-    <header>
-      <Title label={title}/>
-      <Subtitle label={subtitle}/>
-    </header>
-  )
-}
+import { Header } from "@/components/Header";
+import { CountContext } from "./contexts/CountContext";
+import { useState } from "react";
 
 const Page = () => {
-  const pageInfo = {
-    title: 'Título',
-    subtitle: 'Subtitulo'
-  }
+  const [onlineCount, setOnlineCount] = useState(125)
 
   return (
     <div className="container mx-auto">
-      <Header title={pageInfo.title} subtitle={pageInfo.subtitle} />
+      <CountContext.Provider value={{ onlineCount, setOnlineCount }}>
+        <Header />
+      </CountContext.Provider>
     </div>
   );
 }
