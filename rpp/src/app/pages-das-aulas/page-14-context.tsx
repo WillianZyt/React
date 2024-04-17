@@ -1,15 +1,15 @@
 'use client'
 
 import { Header } from "@/components/Header";
-import { LoggedUserProvider } from "./contexts/LoggedUser";
+import { CountContext, CountProvider } from "./contexts/CountContext";
 
 const Page = () => {
 
   return (
     <div className="container mx-auto">
-      <LoggedUserProvider>
-        <Header/>
-      </LoggedUserProvider>
+      <CountProvider>
+        <Header />
+      </CountProvider>
     </div>
   );
 }
