@@ -1,4 +1,4 @@
-import { PostContext } from "@/app/contexts/PostContext";
+import { PostContext } from "@/contexts/PostContext";
 import { useContext } from "react";
 
 export const Footer =()=>{

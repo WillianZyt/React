@@ -1,4 +1,4 @@
-import { PostContext } from "@/app/contexts/PostContext";
+import { PostContext } from "@/contexts/PostContext";
 import { useContext, useState } from "react"
 
 export const Header = () => {
@@ -9,7 +9,10 @@ export const Header = () => {
 
   const handleAddButton = () => {
     if(titleInput && bodyInput){
-      postCtx?.addPost(titleInput, bodyInput);
+      postCtx?.dispatch({
+        type: 'add',
+        payload: {title: titleInput, body: bodyInput}
+      })
       setTitleInput('');
       setBodyInput('');
     }

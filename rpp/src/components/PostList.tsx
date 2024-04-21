@@ -1,8 +1,15 @@
-import { PostContext } from "@/app/contexts/PostContext"
+import { PostContext } from "@/contexts/PostContext";
 import { useContext } from "react"
 
 export const PostList = () => {
   const postCtx = useContext(PostContext)
+
+  const handleRemoveButton = (id: number) => {
+    postCtx?.dispatch({
+      type: 'remove',
+      payload: { id }
+    });
+  }
 
   return (
     <div>
@@ -11,7 +18,7 @@ export const PostList = () => {
           <div className="text-xl font-bold mb-2">{item.title}</div>
           <div className="text-sm">{item.body}</div>
           <button
-          onClick={()=> postCtx.removePost(item.id)}
+            onClick={() => handleRemoveButton(item.id)}
           >[ Remover ]</button>
         </div>
       ))}
