@@ -3,16 +3,18 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PostProvider } from "./contexts/PostContext";
+import { PostList } from "@/components/PostList";
 
 const Page = () => {
 
   return (
-    <div className="container mx-auto flex flex-col items-center justify-center">
-      <PostProvider>
+    <PostProvider>
+      <div className="container mx-auto">
         <Header />
-      </PostProvider>
-      <Footer />
-    </div>
+        <PostList/>
+        <Footer />
+      </div>
+    </PostProvider>
   );
 }
 
