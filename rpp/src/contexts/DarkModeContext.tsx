@@ -2,7 +2,7 @@ import { ReactNode, createContext, useContext, useEffect, useState } from "react
 
 type DarkModeType = {
   darkMode: Boolean;
-  setDarkMode: () => void;
+  setDarkMode: (value:boolean) => void;
 }
 
 export const DarkModeContext = createContext<DarkModeType | null>(null);
@@ -20,4 +20,4 @@ export const DarkModeProvider = ({ children }: { children: ReactNode }) => {
     </DarkModeContext.Provider>
   )
 }
-export const useDarkMode = useContext(DarkModeContext)
+export const useDarkMode =()=> useContext(DarkModeContext);

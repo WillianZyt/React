@@ -1,7 +1,7 @@
 'use client'
 
 import { Header } from "@/components/Header";
-import { DarkModeProvider, ThemeProvider } from "@/contexts/ThemeContext";
+import { DarkModeProvider, ThemeProvider } from "@/contexts/DarkModeContext";
 
 const Page = () => {
 
