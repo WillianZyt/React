@@ -1,5 +1,5 @@
 import { ReactNode, createContext, useReducer, useState } from "react";
-import { Post } from "@/types/Post";
+import { Post } from "@/types/Message";
 import { postReducer } from "../reducers/postReducer";
 
 type PostContextType = {

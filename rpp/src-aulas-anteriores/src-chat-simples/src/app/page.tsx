@@ -14,7 +14,7 @@ const Page = () => {
 
           <Chat/>
         </ChatProvider>
-      </UserProvidegr>
+      </UserProvider>
     </div>
   );
 }

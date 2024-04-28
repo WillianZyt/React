@@ -1,4 +1,4 @@
-import { PostContext } from "@/contexts/PostContext";
+import { PostContext } from "@/contexts/ChatContext";
 import { useContext } from "react";
 
 export const Footer =()=>{

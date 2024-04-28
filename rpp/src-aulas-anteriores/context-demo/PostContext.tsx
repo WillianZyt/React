@@ -1,4 +1,4 @@
-import { Post } from "@/types/Post";
+import { Post } from "@/types/Message";
 import { PostActions, postReducer } from "../reducers/postReducer";
 import { Dispatch, ReactNode, createContext, useReducer } from "react";
 

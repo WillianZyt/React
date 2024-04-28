@@ -1,4 +1,4 @@
-import { PostContext, usePosts } from "@/contexts/PostContext";
+import { PostContext, usePosts } from "@/contexts/ChatContext";
 import { useContext } from "react"
 
 export const PostList = () => {
