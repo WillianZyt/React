@@ -1,0 +1,26 @@
+Symfony -> pular 21,22,23, 30, 31
+
+
+
+1. composer install
+2.	composer require symfony/orm-pack
+	composer require --dev symfony/maker-bundle
+	composer req serializer | para transformar a string em objeto
+3. 	configurar server no [.env] e no [docker-compose.yaml]
+	criar server no mysql no docker-compose, costuma vir Postgress
+4.	docker-compose up
+	verificar os dados do database_url
+5. symfony serve
+6. php bin/console make:entity
+7. php bin/console make:controller ProductController
+8. php bin/console doctrine:schema:create ->criar tabelas no db
+
+OBS:
+	/**
+    	 * Usei o serializer do symfony para retornar os dados em json
+     	*/
+
+	/**
+         * $request->getContent() recupera o conteúdo da requisição em json
+         * $request->request->all() recupera o conteúdo da requisição em array
+         */
